@@ -3,7 +3,7 @@
     <string name="currency_calculate_title">환율 계산</string>
     <string name="please_check_network_connection">인터넷 연결 상태를 확인해주세요 :(</string>
     <string name="loading_data">환율 정보를 불러오는 중..</string>
-    <string name="invalid_access_info">접속 정보가 올바르지 않습니다 :(</string>
+    <string name="invalid_access_info">요청 정보가 올바르지 않습니다 :(</string>
     <string name="currency_korea">한국(KRW)</string>
     <string name="currency_philippines">필리핀(PHP)</string>
     <string name="currency_japan">일본(JPY)</string>
@@ -14,4 +14,9 @@
     <string name="request_time">조회시간 :</string>
     <string name="amount_of_money">송금액 :</string>
     <string name="exchange_rate">환율 :</string>
+    <string name="please_select_receipt_country">수취 국가 통화를 선택하세요</string>
+    <string name="calculated_amount_will_be_shown_here">계산된 수취금액이 여기에 표시됩니다</string>
+    <string name="input_limit_alarm">송금액은 총 500,000 USD를 초과할 수 없습니다.</string>
+    <string name="recept_amout_notice">수취금액은 %s %s 입니다.</string>
+    <string name="upated_currency_info">%s %s / %s</string>
 </resources>

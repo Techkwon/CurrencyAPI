@@ -1,10 +1,13 @@
 @file:Suppress("DEPRECATION")
 package woogear.kwon.currencyapi.utils
 
+import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import woogear.kwon.currencyapi.R
+import woogear.kwon.currencyapi.model.CurrencyData
 
 object CommonUtils {
     @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
@@ -38,5 +41,20 @@ object CommonUtils {
         }
 
         return result
+    }
+
+    fun setDataArrays(currencies: Array<String?>, countries: Array<String?>, data: CurrencyData, application: Application) {
+        var i = 0
+
+        for (quote in data.quotes) {
+            currencies[i] = quote.key.substring(3) // ex) USDKRW -> KRW
+            countries[i] = when (currencies[i]) {
+                Exchange.KRW.name -> application.getString(R.string.currency_korea)
+                Exchange.PHP.name -> application.getString(R.string.currency_philippines)
+                Exchange.JPY.name -> application.getString(R.string.currency_japan)
+                else -> application.getString(R.string.something_went_wrong)
+            }
+            i++
+        }
     }
 }

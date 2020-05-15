@@ -11,6 +11,7 @@ import woogear.kwon.currencyapi.R
 import woogear.kwon.currencyapi.model.CurrencyData
 import woogear.kwon.currencyapi.utils.Constants.API_KEY
 import woogear.kwon.currencyapi.utils.Constants.CURRENCIES
+import woogear.kwon.currencyapi.utils.Constants.FORMAT
 
 class CurrencyViewModel(application: Application): AndroidViewModel(application) {
     internal val currencyLiveData = MutableLiveData<CurrencyData>()
@@ -19,9 +20,10 @@ class CurrencyViewModel(application: Application): AndroidViewModel(application)
     internal fun getCurrency() = viewModelScope.launch(Dispatchers.IO) {
         val api: CurrencyService = APIClient.getClient()
             .create(CurrencyService::class.java)
-        val response = api.getCurrencies(API_KEY, CURRENCIES)
+        val response = api.getCurrencies(API_KEY, CURRENCIES, FORMAT)
         if (response.isSuccessful){
             val result = response.body() as CurrencyData
+
             if (result.success) setCurrency(result)
             else setErrorMessage(getApplication<Application>().resources.getString(R.string.invalid_access_info))
         } else

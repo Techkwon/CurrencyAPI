@@ -9,6 +9,7 @@ interface CurrencyService {
     @GET("/live")
     suspend fun getCurrencies(
         @Query("access_key") apiKey: String,
-        @Query("currencies") currencies: String
+        @Query("currencies") currencies: String,
+        @Query("format") format: Int
     ): Response<CurrencyData>
 }
