@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: CurrencyViewModel
 
     companion object {
-        private const val INPUT_LIMIT = 500000.00
+        private const val INPUT_LIMIT = 10000.00
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -133,10 +134,12 @@ class MainActivity : AppCompatActivity() {
     private fun updateResult(amount: Double) {
         val formattedAmount = String.format("%,.2f", amount * selectedRate)
         this.tv_result.text = String.format(getString(R.string.recept_amout_notice), formattedAmount, selectedCurrency)
+        this.tv_result.setTextColor(ContextCompat.getColor(this, R.color.colorBlack))
     }
 
     private fun showInputAlarm() {
         this.tv_result.text = getString(R.string.input_limit_alarm)
+        this.tv_result.setTextColor(ContextCompat.getColor(this, R.color.colorRed))
     }
 
     private fun showNetworkError(msg: String) {
