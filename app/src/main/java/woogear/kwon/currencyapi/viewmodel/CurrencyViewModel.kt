@@ -14,10 +14,10 @@ import woogear.kwon.currencyapi.utils.Constants.CURRENCIES
 import woogear.kwon.currencyapi.utils.Constants.FORMAT
 
 class CurrencyViewModel(application: Application): AndroidViewModel(application) {
-    internal val currencyLiveData = MutableLiveData<CurrencyData>()
-    internal val errorLiveData = MutableLiveData<String>()
+    val currencyLiveData = MutableLiveData<CurrencyData>()
+    val errorLiveData = MutableLiveData<String>()
 
-    internal fun getCurrency() = viewModelScope.launch(Dispatchers.IO) {
+    fun getCurrency() = viewModelScope.launch(Dispatchers.IO) {
         val api: CurrencyService = APIClient.getClient()
             .create(CurrencyService::class.java)
         val response = api.getCurrencies(API_KEY, CURRENCIES, FORMAT)

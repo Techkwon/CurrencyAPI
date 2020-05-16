@@ -16,7 +16,7 @@
     <string name="exchange_rate">환율 :</string>
     <string name="please_select_receipt_country">수취 국가 통화를 선택하세요</string>
     <string name="calculated_amount_will_be_shown_here">계산된 수취금액이 여기에 표시됩니다</string>
-    <string name="input_limit_alarm">송금액이 바르지 않습니다.</string>
+    <string name="input_limit_alarm">송금액이 올바르지 않습니다.</string>
     <string name="recept_amout_notice">수취금액은 %s %s 입니다.</string>
     <string name="upated_currency_info">%s %s / %s</string>
 </resources>

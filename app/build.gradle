@@ -52,8 +52,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$archLifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion"
 
-    def ktxVersion = "1.0.2"
-    implementation "androidx.core:core-ktx:$ktxVersion"
     api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
     // coroutine
