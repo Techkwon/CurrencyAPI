@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         val formattedRate = String.format("%,.2f", rate)
 
         this.tv_receipt_right.text = country
-        this.tv_rate_right.text = String.format(getString(R.string.upated_currency_info), formattedRate, currency, source)
+        this.tv_rate_right.text = String.format(getString(R.string.updated_currency_info), formattedRate, currency, source)
 
         selectedCurrency = currency ?: "unknown"
         selectedRate = rate ?: 0.00
@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateResult(amount: Double) {
         val formattedAmount = String.format("%,.2f", amount * selectedRate)
-        this.tv_result.text = String.format(getString(R.string.recept_amout_notice), formattedAmount, selectedCurrency)
+        this.tv_result.text = String.format(getString(R.string.receipt_amount_notice), formattedAmount, selectedCurrency)
         this.tv_result.setTextColor(ContextCompat.getColor(this, R.color.colorBlack))
     }
 
