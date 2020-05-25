@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         val currencies = arrayOfNulls<String>(data.quotes.size) // ex) KRW
         val countries = arrayOfNulls<String>(data.quotes.size) // ex) 한국(KRW)
 
-        setDataArrays(currencies, countries, data, application)
+        setDataArrays(currencies, countries, data, this)
 
         this.number_picker.minValue = 0
         this.number_picker.maxValue = countries.size - 1
